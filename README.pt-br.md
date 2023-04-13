@@ -1,61 +1,71 @@
 [English](README.md) | [Português](README.pt-br.md)
 
-# Serviço de Gerenciamento de Usuários e Endereços
+# Serviço de Gerenciamento de Livros
 
-Este microserviço, construído com Spring Boot, é responsável pelo gerenciamento de usuários e endereços. O serviço fornece uma API REST que permite a recuperação, criação, atualização e exclusão de entidades de usuário e endereço.
+Este é um microsserviço desenvolvido como parte de uma atividade de escola de programação para se familiarizar com microsserviços. É um serviço simples para gerenciamento de livros, fornecendo operações básicas de CRUD (Create, Read, Update, Delete) sobre os dados do livro.
 
 ## Instalação
 
-Para usar este serviço, você precisará ter Java 17+ e PostgreSQL instalados.
+Para usar este serviço, você precisará ter o Java 17+ e o PostgreSQL instalados.
 
-Depois de ter o PostgreSQL instalado, você pode iniciar o Serviço de Gerenciamento de Usuários e Endereços executando o seguinte comando:
+Assim que você tiver o PostgreSQL instalado, pode iniciar o Serviço de Gerenciamento de Usuários e Endereços executando o seguinte comando:
 
 ```./mvnw spring-boot:run```
 
 ## Configuração
 
-O serviço é configurado usando o arquivo `application.properties`, localizado na pasta raiz do projeto. Você pode alterar a URL do banco de dados, nome de usuário e senha modificando as propriedades `spring.datasource.url`, `spring.datasource.username` e `spring.datasource.password`, respectivamente.
+O serviço é configurado usando o arquivo `application.properties` , localizado na pasta raiz do projeto. Você pode alterar a URL do banco de dados, o nome de usuário e a senha modificando as propriedades `spring.datasource.url`, `spring.datasource.username` e `spring.datasource.password`, respectivamente.
 
 ## Uso
 
-O Serviço de Gerenciamento de Usuários e Endereços atualmente fornece os seguintes endpoints:
+O Serviço de Gerenciamento de Livros fornece atualmente os seguintes endpoints:
 
-## GET /api/users
+## GET /api/books
 
-Recupera todos os usuários. A resposta será no formato JSON.
+Recupera todos os livros. A resposta será em formato JSON.
 
-## GET /api/addresses/{id}
+## GET /api/books/{id}
 
-Recupera o endereço com o `id` especificado. A resposta será no formato JSON.
+Recupera o livro com o `id`especificado. A resposta será em formato JSON.
 
-## GET /api/users/{id}
+## GET /api/books/example
 
-Recupera o usuário com o `id` especificado. A resposta será no formato JSON.
+Recupera um exemplo de corpo de requisição de criação de livro. A resposta será em formato JSON.
 
-## GET /api/users/email/{email}
+## POST /api/books
 
-Recupera o usuário com o `email` especificado. A resposta será no formato JSON.
+Cria um novo livro. O corpo da solicitação deve O retorno terá um status HTTP de 201 CREATED.
 
-## GET /api/users/example
+Abaixo segue um exemplo de uma solicitação válida:
 
-Recupera um exemplo de corpo de solicitação de criação de usuário. A resposta será no formato JSON.
+```
+{
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "isbn": "978-0316769488",
+    "publisher": "Back Bay Books",
+    "language": "English",
+    "description": "The Catcher in the Rye is a story by J. D. Salinger, partially published in serial form in 1945–1946 and as a novel in 1951. It was originally intended for adults but is often read by adolescents for its themes of angst, alienation, and as a critique on superficiality in society.",
+    "publicationDate": "July 16, 1951",
+    "numberOfPages": 277,
+    "category": "Fiction",
+    "price": 10.99,
+    "genre": "Coming-of-Age Fiction"
+}
+```
 
-## POST /api/users
+## PUT /api/book/{id}
 
-Cria um novo usuário. O corpo da solicitação deve conter as informações necessárias para o usuário, incluindo nome, sobrenome, email, senha e ID do endereço. A resposta terá um status HTTP de 201 CREATED.
+Atualiza o livro com o `id` especificado. O corpo da solicitação deve conter as informações atualizadas do livro, assim como no exemplo anterior. O retorno terá um status HTTP de 204 NO CONTENT.
 
-## PUT /api/users/{id}
+## DELETE /api/book/{id}
 
-Atualiza o usuário com o `id` especificado. O corpo da solicitação deve conter as informações atualizadas para o usuário, incluindo nome, sobrenome, email e senha. A resposta terá um status HTTP de 204 NO CONTENT.
+Exclui o livro com o `id` especificado. O retorno terá um status HTTP de 204 NO CONTENT.
 
-## DELETE /api/users/{id}
+## Contribuição
 
-Exclui o usuário com o `id` especificado. A resposta terá um status HTTP de 204 NO CONTENT.
-
-## Contribuindo
-
-Solicitações de pull são bem-vindas. Para grandes mudanças, abra um problema primeiro para discutir o que você gostaria de mudar.
+Pull requests são bem-vindos. Para grandes alterações, abra primeiro uma issue para discutir o que você gostaria de alterar.
 
 ## Licença
 
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.

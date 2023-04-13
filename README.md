@@ -1,8 +1,8 @@
 [English](README.md) | [Português](README.pt-br.md)
 
-# User and Address Management Service
+# Book Management Service
 
-This microservice, built with Spring Boot, is responsible for managing users and addresses. The service provides a REST API that enables the retrieval, creation, updating, and deletion of user and address entities.
+This is a microservice developed as part of a programming school activity to familiarize with microservices. It is a simple service for managing books, providing basic CRUD (Create, Read, Update, Delete) operations over the book data.
 
 ## Installation
 
@@ -18,39 +18,49 @@ The service is configured using the `application.properties` file, located in th
 
 ## Usage
 
-The User and Address Management Service currently provides the following endpoints:
+The Book Management Service currently provides the following endpoints:
 
-## GET /api/users
+## GET /api/books
 
-Retrieves all users. The response will be in JSON format.
+Retrieves all books. The response will be in JSON format.
 
-## GET /api/addresses/{id}
+## GET /api/books/{id}
 
-Retrieves the address with the specified `id`. The response will be in JSON format.
+Retrieves the book with the specified `id`. The response will be in JSON format.
 
-## GET /api/users/{id}
+## GET /api/books/example
 
-Retrieves the user with the specified `id`. The response will be in JSON format.
+Retrieves an example book creation request body. The response will be in JSON format.
 
-## GET /api/users/email/{email}
+## POST /api/books
 
-Retrieves the user with the specified `email`. The response will be in JSON format.
+Creates a new book. The request body should The response will have an HTTP status of 201 CREATED.
 
-## GET /api/users/example
+Here's an example of a valid request body:
 
-Retrieves an example user creation request body. The response will be in JSON format.
+```
+{
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "isbn": "978-0316769488",
+    "publisher": "Back Bay Books",
+    "language": "English",
+    "description": "The Catcher in the Rye is a story by J. D. Salinger, partially published in serial form in 1945–1946 and as a novel in 1951. It was originally intended for adults but is often read by adolescents for its themes of angst, alienation, and as a critique on superficiality in society.",
+    "publicationDate": "July 16, 1951",
+    "numberOfPages": 277,
+    "category": "Fiction",
+    "price": 10.99,
+    "genre": "Coming-of-Age Fiction"
+}
+```
 
-## POST /api/users
+## PUT /api/book/{id}
 
-Creates a new user. The request body should contain the necessary information for the user, including first name, last name, email, password, and address ID. The response will have an HTTP status of 201 CREATED.
+Updates the book with the specified `id`. The request body should contain the updated information for the book, just as the previous example. The response will have an HTTP status of 204 NO CONTENT.
 
-## PUT /api/users/{id}
+## DELETE /api/book/{id}
 
-Updates the user with the specified `id`. The request body should contain the updated information for the user, including first name, last name, email, and password. The response will have an HTTP status of 204 NO CONTENT.
-
-## DELETE /api/users/{id}
-
-Deletes the user with the specified `id`. The response will have an HTTP status of 204 NO CONTENT.
+Deletes the book with the specified `id`. The response will have an HTTP status of 204 NO CONTENT.
 
 ## Contributing
 
