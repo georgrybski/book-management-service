@@ -2,7 +2,7 @@
 
 # Serviço de Gerenciamento de Livros
 
-Este é um microsserviço desenvolvido como parte de uma atividade de escola de programação para se familiarizar com microsserviços. É um serviço simples para gerenciamento de livros, fornecendo operações básicas de CRUD (Create, Read, Update, Delete) sobre os dados do livro.
+Este é um microsserviço desenvolvido como parte de uma aplicação de livraria. É um serviço simples para gerenciamento de livros, fornecendo operações básicas de CRUD (Create, Read, Update, Delete) sobre os dados do livro.
 
 ## Instalação
 
