@@ -2,7 +2,7 @@
 
 # Book Management Service
 
-This is a microservice developed as part of a programming school activity to familiarize with microservices. It is a simple service for managing books, providing basic CRUD (Create, Read, Update, Delete) operations over the book data.
+This is a Spring Boot microsservice developed as part of a Bookstore application. It is a simple service for managing books, providing basic CRUD (Create, Read, Update, Delete) operations over the book data.
 
 ## Installation
 
